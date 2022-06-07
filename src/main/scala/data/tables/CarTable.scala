@@ -28,7 +28,7 @@ class CarTable(tag: Tag) extends Table[Car](tag, "Cars") {
   def ownerId = column[Int]("ownerId")
   //    def location = column[Coords]("coords")
   def latitude = column[Latitude]("latitude")
-  //
+
   def longitude = column[Longitude]("longitude")
 
   override def * =

@@ -1,11 +1,11 @@
 package carshario
 package data.models
 
-import data.types.{Age, HumanName}
+import data.types.{Birthday, HumanName}
 
 case class Owner(
                   id: Option[Int] = Some(0),
                   firstName: HumanName,
                   lastName: HumanName,
-                  age: Age
+                  birthday: Birthday
                 )
