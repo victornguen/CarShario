@@ -24,3 +24,8 @@ class OwnerTable(tag: Tag) extends Table[Owner](tag, "Owner") {
     birthday
   ) <> (Owner.tupled, Owner.unapply)
 }
+
+object OwnerTable {
+  lazy val owners      = TableQuery[OwnerTable]
+  lazy val insertOwner = owners returning owners.map(_.id)
+}

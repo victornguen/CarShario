@@ -15,7 +15,7 @@ trait CarStorage[F[_]] {
 
   def findByVin(vin: VIN): F[Option[Car]]
 
-  def findByProducer(producer: CarProducer): F[List[Car]]
+  def findByProducer(producer: CarManufacturer): F[List[Car]]
 
   def findByModel(model: CarModel): F[Option[Car]]
 

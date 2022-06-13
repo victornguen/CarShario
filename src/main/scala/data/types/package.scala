@@ -12,7 +12,7 @@ package object types {
 val str = "ddd"
   type Color       = String Refined MatchesRegex["^[A-Za-z]+$"]
   type VIN         = String Refined MatchesRegex["^(?=.*[0-9])(?=.*[A-z])[0-9A-z-]{17}$"]
-  type CarProducer = String Refined MatchesRegex["^[A-Za-z\\s\\-0-9]+$"]
+  type CarManufacturer = String Refined MatchesRegex["^[A-Za-z\\s\\-0-9]+$"]
   type CarModel    = String Refined MatchesRegex["^[A-Za-z\\s\\-0-9]+$"]
   type ProdYear    = Int Refined Greater[1886]
   //latitude, longitude
