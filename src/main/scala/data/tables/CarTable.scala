@@ -66,5 +66,4 @@ object CarTable {
 
   def findByOwner(ownerId: Int): FixedSqlStreamingAction[Seq[Car], Car, Effect.Read] =
     cars.filter(_.ownerId === ownerId).result
-
 }
