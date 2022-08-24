@@ -28,4 +28,6 @@ class OwnerTable(tag: Tag) extends Table[Owner](tag, "Owner") {
 object OwnerTable {
   lazy val owners      = TableQuery[OwnerTable]
   lazy val insertOwner = owners returning owners.map(_.id)
+
+  def findById(id:Int): Query[OwnerTable, Owner, Seq] = owners.filter(_.id === id)
 }

@@ -10,6 +10,8 @@ import dao.types._
 import exceptions._
 import storage.services.CarStorage
 
+import be.venneborg.refined.{RefinedMapping, RefinedSupport}
+
 import scala.concurrent.{ExecutionContext, Future}
 
 class CarStorageImpl(config: String)(implicit ec: ExecutionContext) extends CarStorage[Future] {
@@ -54,11 +56,10 @@ class CarStorageImpl(config: String)(implicit ec: ExecutionContext) extends CarS
 
   override def insert(car: Car): Future[Either[Throwable, Int]] = {
     val mayBeCar: Future[Option[Car]] = db.run(CarTable.findByVin(car.vin))
-    val res = mayBeCar.flatMap {
+    mayBeCar.flatMap {
       case Some(_) => Future.successful(Left(new ObjectAlreadyExists(car)))
       case None    => db.run(insertCar += car).map(Right(_))
     }
-    res
   }
 
   override def delete(car: Car): Future[Int] = db.run(cars.filter(_.vin === car.vin).delete)

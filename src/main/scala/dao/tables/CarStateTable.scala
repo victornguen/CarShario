@@ -4,7 +4,7 @@ package dao.tables
 import dao.dbprofiles.H2RefinedProfile.api._
 import dao.dbprofiles.H2RefinedProfile.mapping._
 import dao.models.CarState
-import dao.types.{Latitude, Longitude}
+import dao.types.{Latitude, Longitude, VIN}
 
 import slick.dbio.Effect
 import slick.sql.FixedSqlStreamingAction
@@ -51,4 +51,16 @@ object CarStateTable {
       state.latitude.between(latFrom, latTo) && state.longitude.between(longFrom, longTo)
     }
   }
+
+  def findByVin(vin: VIN): Query[CarStateTable, CarState, Seq] = for{
+    state <- carStates
+    car <- state.car
+    result <- carStates if car.vin === vin
+  } yield result
+
+  def findByCarId(id: Int) = for{
+    state <- carStates
+    car <- state.car
+    result <- carStates if car.id === id
+  } yield result
 }
