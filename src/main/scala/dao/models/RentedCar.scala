@@ -1,5 +1,5 @@
 package carshario
-package data.models
+package dao.models
 
 import java.time.LocalDateTime
 

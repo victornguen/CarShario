@@ -1,11 +1,11 @@
 package carshario
-package data.tables
+package dao.tables
 
-import data.types._
-import data.models.Owner
+import dao.types._
+import dao.models.Owner
 import eu.timepit.refined.auto._
-import data.dbprofiles.H2RefinedProfile.api._
-import data.dbprofiles.H2RefinedProfile.mapping._
+import dao.dbprofiles.H2RefinedProfile.api._
+import dao.dbprofiles.H2RefinedProfile.mapping._
 
 class OwnerTable(tag: Tag) extends Table[Owner](tag, "Owner") {
 

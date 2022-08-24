@@ -1,9 +1,9 @@
 package carshario
-package data.tables
-import data.dbprofiles.H2RefinedProfile.api._
-import data.dbprofiles.H2RefinedProfile.mapping._
+package dao.tables
+import dao.dbprofiles.H2RefinedProfile.api._
+import dao.dbprofiles.H2RefinedProfile.mapping._
 
-import data.models.RentedCar
+import dao.models.RentedCar
 
 import java.time.LocalDateTime
 

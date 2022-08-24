@@ -1,7 +1,7 @@
 package carshario
-package data.models
+package dao.models
 
-import data.types._
+import dao.types._
 
 import java.sql.Timestamp
 import java.time.LocalDateTime

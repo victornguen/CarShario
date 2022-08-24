@@ -1,7 +1,7 @@
 package carshario
-package data.models
+package dao.models
 
-import data.types.{Birthday, HumanName}
+import dao.types.{Birthday, HumanName}
 
 case class Owner(
   id: Option[Int] = Some(0),

@@ -1,7 +1,7 @@
 package carshario
-package data.models
+package dao.models
 
-import data.types.{Latitude, Longitude}
+import dao.types.{Latitude, Longitude}
 import java.time.LocalDateTime
 
 case class CarState(

@@ -1,5 +1,5 @@
 package carshario
-package data.dbprofiles
+package dao.dbprofiles
 
 import be.venneborg.refined.{RefinedMapping, RefinedSupport}
 

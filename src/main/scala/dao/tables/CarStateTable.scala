@@ -1,10 +1,10 @@
 package carshario
-package data.tables
+package dao.tables
 
-import data.dbprofiles.H2RefinedProfile.api._
-import data.dbprofiles.H2RefinedProfile.mapping._
-import data.models.CarState
-import data.types.{Latitude, Longitude}
+import dao.dbprofiles.H2RefinedProfile.api._
+import dao.dbprofiles.H2RefinedProfile.mapping._
+import dao.models.CarState
+import dao.types.{Latitude, Longitude}
 
 import slick.dbio.Effect
 import slick.sql.FixedSqlStreamingAction

@@ -1,9 +1,8 @@
 package carshario
-package storage
+package storage.services
 
-import data.models.Car
-
-import data.types._
+import dao.models.Car
+import dao.types._
 
 trait CarStorage[F[_]] {
 
@@ -29,7 +28,7 @@ trait CarStorage[F[_]] {
 
   def filter(f: Car => Boolean): F[List[Car]]
 
-  def add(car: Car): F[Either[Throwable, Int]]
+  def insert(car: Car): F[Either[Throwable, Int]]
 
   def delete(car: Car): F[Int]
 

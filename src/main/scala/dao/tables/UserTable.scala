@@ -1,10 +1,10 @@
 package carshario
-package data.tables
+package dao.tables
 
-import data.types._
-import data.models.User
-import data.dbprofiles.H2RefinedProfile.api._
-import data.dbprofiles.H2RefinedProfile.mapping._
+import dao.types._
+import dao.models.User
+import dao.dbprofiles.H2RefinedProfile.api._
+import dao.dbprofiles.H2RefinedProfile.mapping._
 
 import java.time.LocalDate
 
